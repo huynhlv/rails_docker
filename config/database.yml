@@ -1,0 +1,22 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: <%= ENV["DATABASE_HOSTNAME"] %>
+  username: <%= ENV["DATABASE_USERNAME"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+  port: <%= ENV.fetch("DATABASE_PORT") { 3306 } %>
+
+development:
+  <<: *default
+  database: rails-docker-app_development
+
+test:
+  <<: *default
+  database: rails-docker-app_test
+
+production:
+  <<: *default
+  database: rails-docker-app_production
+  username: rails-docker-app
+  password: <%= ENV['DATABASE_PASSWORD'] %>
