@@ -21,7 +21,17 @@
 /yarn-error.log
 
 /public/assets
+/public/javascripts
+/public/uploads
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/app/assets/javascripts/i18n/translations.js
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
+config/application.yml
+config/database.yml
+dump.rdb
+.bap-ci-reports/
