@@ -52,3 +52,12 @@ set :puma_preload_app, false
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+
+namespace :reset_db do
+  desc "Reset database and dump data"
+  task :reset_seed do
+    on roles(:app) do
+      execute "cd #{deploy_to}/current && rails db:drop db:create db:migrate db:seed RAILS_ENV=staging"
+    end
+  end
+end
