@@ -1,10 +1,10 @@
 set :deploy_to, "/deploy/apps/#{fetch(:application)}"
 
-set :user, :root
+set :user, :deploy
 set :stage, :staging
 set :rails_env, :staging
 set :branch, :develop
-server "0.0.0.0:32768", user: fetch(:user), roles: %w{web app db}
+server "0.0.0.0:32769", user: fetch(:user), roles: %w{web app db}
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
